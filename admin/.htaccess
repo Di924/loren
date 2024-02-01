@@ -1,0 +1,6 @@
+<Files stat.php>
+	AuthUserFile C:\EasyPHP-Devserver-17\EasyPHP-Devserver-17\eds-www\optimal\admin\.htpasswd
+	AuthName admin
+	AuthType Basic
+	Require valid-user
+</Files>

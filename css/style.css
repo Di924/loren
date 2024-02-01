@@ -1,0 +1,637 @@
+/*
+цветовая схема:
+#252525     темно серый
+#d5d5d3     светло серый
+#fffffff    белый
+#444444     серый
+#fdd947     желтый
+*/
+/*Красивый стиль для тега H1 блока Header*/
+header h1 {
+font-size: 24px;
+font-weight: 300;
+background-image: linear-gradient(to left, #553c9a, #b393d3);
+color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
+}
+header nav{
+    background-color: #252525;
+    padding-bottom: 10px;
+} /*Цвет фона меню*/
+.nav-scroll {
+overflow-y: hidden; /*скрываем контент, который выходит за нижнюю границу*/
+background-color: #252525; /*цвета фона*/
+}
+body{
+    background-color: #252525; 
+}
+.nav-scroll_items {
+display: flex; /*flex-контейнер*/
+flex-wrap: nowrap;
+overflow-x: auto; /*прокрутка по горизонтали*/
+white-space: nowrap; /*запрет переносить текст*/
+}
+.nav-scroll_item {
+color: #fdd947;
+display: flex;
+padding: 0.5rem 2.5rem;
+text-decoration: none;
+}
+.nav-scroll_item:not(:last-child) {
+border-right: 1px solid #252525;
+}
+.nav-scroll_item_active {
+background-color: #fdd947;
+color: #252525;
+}
+.nav-scroller__item:not(.nav-scroller__item_active):hover {
+background-color: #fdd947;
+}
+/* Цвет и отк. подчеркивание для активного пункта */
+.nav-scroll_item:hover {
+background-color: #fdd947;
+color: #252525;
+text-decoration: none;
+}
+/*Контент*/
+.content {
+padding: 10px 0; /*отступ слева и справа*/
+width: 60%; /* 75% экрана*/
+background-color: #252525;
+margin: 0 auto; /*центрируем контейнер*/
+}
+h3 {margin-left: 10px;} /*отступ слева*/
+.main-content{
+display: flex;
+flex-direction: row;
+
+}
+article{
+    padding: 2.5rem;
+    font-size: 24px;
+    color: #d5d5d3;
+}
+button{
+    background-color: #fdd947;
+    color: #252525;
+    border-radius: 25px;
+    width: 150px;
+    height: 50px;
+    margin: 10px;
+}
+
+.services{
+    width: 100%;
+}
+
+.services td{
+    padding: 8px;
+}
+.td{
+    border: 2px solid #444444;
+    border-radius: 10px;
+    padding: 10px;
+}
+/*Footer*/
+.Footer {
+    width: 100%;
+    height: 50px;
+    background-color: #252525;
+    padding: 10px 0;
+    margin-top: 0px;
+}
+.text-block{ /*текст нижнего колонтитула*/
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+.separator{
+    height: 5em;
+}
+
+
+.img-gallery{
+    margin: 10px;
+}
+
+
+@media screen and (width <= 1200px){
+    #about{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+/*#################################################################################*/
+
+
+/* NAVIGATION */
+
+/*##############################################################################################################
+##############################################################################################################*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{}
+
+html{}
+
+body {
+    position: relative;
+    background-color: #252525;
+    color: white;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template: 1fr auto / 1fr;
+    grid-template-areas: 
+        "main";
+        /* "footer"; */
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+@media screen and (width >= 576px){
+    .container{
+        max-width: 540px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (width >= 768px){
+    .container{
+        max-width: 720px;
+    }
+}
+
+@media screen and (width >= 992px){
+    .container{
+        max-width: 960px;
+    }
+}
+
+@media screen and (width >= 1200px){
+    .container{
+        max-width: 1140px;
+    }
+}
+
+@media screen and (width >= 1400px){
+    .container{
+        max-width: 1320px;
+    }
+}
+
+.main{
+    grid-area: main;
+}
+
+.main__container{
+    margin: 0 auto;
+}
+
+/*##############################################################################################################
+##############################################################################################################*/
+
+.sign-in-box{
+    height: 100vh;
+    align-self: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.sign-in_logo{
+    width: 150px;
+    height: 150px;
+    background-image: url("../img/logo.png");
+    /* background-color: #fdd947; */
+    border-radius: 100%;
+}
+
+.sign-in-form{
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    gap: 10px;
+}
+
+.sign-in-box button{
+    border-radius: 8px;
+    border: solid 2px #fdd947;
+    background-color: #fdd947;
+    color: whitesmoke;
+    width: fit-content;
+    padding: 5px 100px;
+    align-self: center;
+    font-size: inherit;
+
+    &:hover{
+        transition: 0.3s all ease;
+        background-color: rgba(148, 165, 131, 0.67);
+    }
+}
+
+.sign-in-box p{
+    text-align: center;
+    color: #fdd947;
+    font-size: 16px;
+}
+
+/*##############################################################################################################
+##############################################################################################################*/
+
+.input-box{
+    position: relative;
+}
+
+.input-box input[type="text"],
+.input-box input[type="password"],
+.input-box input[type="number"],
+.input-box input[type="time"],
+.input-box input[type="datetime-local"]{
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: #fdd947 solid 2px;
+    background-color: transparent;
+    color: whitesmoke;
+    transition: 0.15s all ease;
+    font-size: inherit;
+    outline: solid 0px #fdd947;
+
+    &:focus{
+        border-color: #fdd947;
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label{
+        padding: 0 5px;
+        transform: translate(10px, -150%);
+        background-color: #252525;
+        font-size: 12px;
+        color: whitesmoke;
+    }
+}
+
+.input-box label{
+    position: absolute;
+    top: 30%;
+    left: 0;
+    padding: 0 10px;
+    color: whitesmoke;
+    pointer-events: none;
+    transition: 0.15s all ease;
+    font-size: inherit;
+}
+
+/*##############################################################################################################
+##############################################################################################################*/
+
+.table{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.table .table-header{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+    background-color: #fdd947;
+    padding: 6px 0; 
+}
+.table .table-body{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.table .table-body > :nth-child(2n){
+    background-color: #fdd947;
+}
+.table .table-body form{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+    padding: 6px 0;
+
+    &:hover{
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+.staff-table,
+.staff-table > form{
+    grid-template: 1fr / 30px repeat(5, 160px) 270px 100px minmax(auto, 80px);
+}
+
+.shift-table,
+.shift-table > form{
+    grid-template: 1fr / 30px repeat(3, 220px) minmax(auto, 80px);
+}
+
+.orders-table,
+.orders-table > form{
+    grid-template: 1fr / 30px 110px 90px repeat(2, 360px) minmax(auto, 80px);
+}
+
+.menu-table,
+.menu-table > form{
+    grid-template: 1fr / 30px repeat(3, 160px) minmax(auto, 80px);
+}
+
+.menu-orders-table,
+.menu-orders-table > form{
+    grid-template: 1fr / 30px repeat(4, 160px) minmax(auto, 80px);
+}
+
+.roles-table,
+.roles-table > form{
+    grid-template: 1fr / 30px repeat(1, 160px) minmax(auto, 80px);
+}
+
+/*##############################################################################################################
+##############################################################################################################*/
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #252525;
+    background-color: #fdd947;
+}
+
+.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 18px;
+    color: whitesmoke;
+
+    &:hover {
+        background-color: #ddd;
+    }
+}
+  
+.tab button.active {
+    background-color: #252525;
+}
+  
+.tabcontent {
+    display: none;
+    padding: 10px 0;
+}
+
+/*##############################################################################################################
+##############################################################################################################*/
+
+.group_block{
+    height: 100vh;
+    align-self: center;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+}
+.photo_block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #252525;
+    padding: 20px;
+    border: 2px solid #fdd947;
+    border-radius: 10px;
+}
+.info_block{
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    padding: 20px;
+    background-color: #252525; 
+    border: 2px solid #fdd947;
+    border-radius: 10px;
+}
+.photo_block button{
+    border-radius: 8px;
+    border: solid 2px #fdd947;
+    background-color: #fdd947;
+    color: whitesmoke;
+    width: fit-content;
+    padding: 5px 100px;
+    align-self: center;
+    font-size: inherit;
+
+    &:hover{
+        transition: 0.3s all ease;
+        background-color: rgba(148, 165, 131, 0.67);
+    }
+}
+.info_text{
+    text-align: center;
+    padding-top: 5px;
+}
+.info_text:last-of-type{
+    padding-bottom: 30px;
+}
+.info_text_block{
+    display: flex;
+    justify-content:space-around;
+    padding-bottom: 10px;
+}
+/* .info_text_block:last-of-type{
+    padding-bottom: 0px;
+} */
+.info_text_block_pull{
+    width: 300px;
+}
+.info_text_block_push{
+    width: 300px;
+}
+.profile_img{
+    width: 150px;
+    height: 150px;
+    background-image: url("../img/anastasia.png");
+    /* background-color: #fdd947; */
+    border-radius: 100%;
+}
+.profile_block_schedule{
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+.profile_schedule{
+    display: flex;
+    justify-content:space-around;
+}
+.profile_schedule button{
+    border-radius: 8px;
+    border: solid 2px #fdd947;
+    background-color: #fdd947;
+    color: whitesmoke;
+    width: fit-content;
+    padding: 5px 100px;
+    align-self: center;
+    font-size: inherit;
+
+    &:hover{
+        transition: 0.3s all ease;
+        background-color: rgba(148, 165, 131, 0.67);
+    }
+}
+@media screen and (width <= 768px){
+    .profile_schedule button{
+        padding: 5px 50px;
+    }
+}
+/*============================================*/
+
+@media screen and (width >= 576px){
+    .photo_block{
+        min-width: 576px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .info_block{
+        min-width: 576px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .info_text_block_pull{
+        width: 200px;
+    }
+    .info_text_block_push{
+        width: 200px;
+    }
+}
+
+@media screen and (width >= 768px){
+    .photo_block{
+        min-width: 700px;
+    }
+    .info_block{
+        min-width: 700px;
+    }
+    .info_text_block_pull{
+        width: 200px;
+    }
+    .info_text_block_push{
+        width: 200px;
+    }
+}
+
+@media screen and (width >= 992px){
+    .photo_block{
+        /* max-width: 960px; */
+        min-width: 340px;
+    }
+    .info_block{
+        min-width: 580px;
+    }
+    .info_text_block_pull{
+        width: 200px;
+    }
+    .info_text_block_push{
+        width: 200px;
+    }
+}
+@media screen and (width >= 1200px){
+    .photo_block{
+        /* max-width: 1140px; */
+        min-width: 400px;
+    }
+    .info_block{
+        min-width: 720px;
+    }
+    .info_text_block_pull{
+        width: 300px;
+    }
+    .info_text_block_push{
+        width: 300px;
+    }
+}
+
+@media screen and (width >= 1400px){
+    .photo_block{
+        min-width: 400px;
+        /* min-height: 100vh; */
+    }
+    .info_block{
+        min-width: 900px;
+    }
+    .info_text_block_pull{
+        width: 300px;
+    }
+    .info_text_block_push{
+        width: 300px;
+    }
+}
+
+/*##############################################################################################################
+##############################################################################################################*/
+
+.choice_block_schedule{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.choice_schedule button{
+    border-radius: 8px;
+    border: solid 2px #fdd947;
+    background-color: #fdd947;
+    color: whitesmoke;
+    width: fit-content;
+    padding: 5px 100px;
+    align-self: center;
+    font-size: inherit;
+
+    &:hover{
+        transition: 0.3s all ease;
+        background-color: rgba(148, 165, 131, 0.67);
+    }
+}
+
+@media screen and (width <= 576px){
+    .choice_schedule button{
+        padding: 5px;
+        margin: 5px;
+    }
+}
+@media screen and (width <= 768px){
+    .choice_schedule button{
+        padding: 5px;
+        margin: 5px;
+    }
+}
+
+/*##############################################################################################################
+##############################################################################################################*/
